@@ -5,9 +5,11 @@ Trò chơi được phát triển từ engine Halo 1, với giấy phép mở t�
 
 Game đã hoàn thành VCop 1, bạn có thể tải về bây giờ.
 
-Thông tin dự án trên Itch.io: https://trietta.itch.io/halo-ce-vcop 
+Thông tin dự án trên Itch.io: https://trietta.itch.io/halo-ce-vcop
+
 Thông tin dự án trên website: https://halovcop.webnode.vn/
 
 # Liên kết ngoài
-Halo CE Maps : http:/hce.halomaps.org/
-Halo CE3 : https://haloce3.com/
+Halo CE Maps: http://hce.halomaps.org/
+
+Halo CE3: https://haloce3.com/
