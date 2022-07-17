@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Tool EX GUI Definitions version="1.0 by SteelIXB -->
+<!-- Tool EX GUI Definitions version="1.1 Updated by Jackrabbit72380 -->
+<!-- Note Youe must Rename os_tool.exe to tool.exe to use the os features. -->
+<ToolEx>
+                <MenuItem Text="Build a Map or Yelo Cache File Ex" Description="Builds a cache file with extra Open Sauce arguments from a Scenario tag. Output cache file will be in .yelo format instead of .map if the use-memory-updates is on.">
+                <TextItem Text="Mod Name" Name="Mod Name" 
+                        Description="The name of the mod this scenario belongs to. This will also be used when naming the new data-files" />
+		<ListItem Text="Create A New" Name="Create A New" 
+                        Description="Should new data-files be created before building the cache?" />
+			<LIItem Text="No" Value="0" />
+			<LIItem Text="Yes" Value="1" />
+		<ListItem Text="Store Resources" Name="Store Resources" 
+                        Description="Should the scenario's bitmaps/sounds/locale data be stored in the data-files?" />
+			<LIItem Text="No" Value="0" />
+			<LIItem Text="Yes" Value="1" />
+		<ListItem Text="Use Memory Upgrades" Name="Use Memory Upgrades" 
+                        Description="Does the scenario require Open Sauce's memory upgrades to run? Produces .yelo file instead of .map" />
+			<LIItem Text="No" Value="0" />
+			<LIItem Text="Yes" Value="1" />
+		<FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" 
+                        Description="Scenario tag to create a map or yelo cache file from." />
+                <Tool Arguments="build-cache-file-ex [Mod Name] [Create A New] [Store Resources] [Use Memory Upgrades] [Scenario]" />
+        </MenuItem>
+        <MenuItem Text="Import Structure Lightmap Uv's" Description=" replaces lightmap texture coordinates">
+                <DirItem Text="Source Obj Directory" Name="ObjSourceDirectory" 
+                        Description="location of the source obj, relative to the data directory." />
+                <DirItem Text="Source Bsp Directory" Name="BspSourceDirectory" 
+                        Description="location of the target bsp, relative to the tags directory." />
+		<ListItem Text="Note" Name="Note" Description="The quality to generate the lightmaps at.">
+			<LIItem Text="Replaces lightmap texture coordinates with custom ones loaded from a .obj file." Value="0" />
+			<LIItem Text="The .obj File must have lightmaps grouped by object and in ascending order lightmap_0 to lightmap_n." Value="1" />
+			<LIItem Text="Best way to ensure this is to export a fresh lightmaps .obj using Aether," Value="1" />
+			<LIItem Text="Then Import it into a model program then ONLY edit UV's to ensure the model matches the bsp" Value="1" />
+		</ListItem>
+                <Tool Arguments="import-structure-lightmap-uvs [ObjSourceDirectory] [BspSourceDirectory]" />
+        </MenuItem> 
+        <MenuItem Text="Compile Shader Postprocess" Description=" Creates shader_postprocess_generic tags from HLSL .fx shaders in the data">
+                <DirItem Text="Source Directory" Name="SourceDirectory" 
+                        Description="Source directory containing shaders to compile." />
+                <Tool Arguments="compile-shader-postprocess [SourceDirectory]" />
+        </MenuItem> 
+        <MenuItem Text="Remove OS Mods From a Scenario" Description=" Formats a scenario into a tag that can be read by stock tools">
+                <FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" 
+                        Description="You Should Back up your tag before hand to be safe!" />
+                <Tool Arguments="remove-os-mods-from-scenario [Scenario]" />
+        </MenuItem> 
+        <MenuItem Text="Merge Scenery" Description=" Merge Scenery From one .scenario file to another">
+                <FileItem Text="Source Scenario Tag" Name="Source Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" 
+                        Description="Scenario tag to Merge Scenery from." />
+		<FileItem Text="Destination Scenario Tag" Name="Destination Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" 
+                        Description="Scenario tag to merge scenery to." />
+                <Tool Arguments="merge-scenery [Source Scenario] [Destination Scenario]" />
+        </MenuItem>
+        <MenuItem Text="Structure Lens Flares" Description=" Structure Lens Flares Inside Your BSP">
+		<FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" Description="Scenario tag referencing the BSP you wish to structure lens flares for." />
+		<TextItem Text="Scenario Structure BSP Name" Name="BSPIndex" Description="The name of the BSP tag referenced in the scenario tag" />
+                <Tool Arguments="structure-lens-flares [BSPIndex]" />
+        </MenuItem>
+        <MenuItem Text="Structure Breakable Surfaces" Description=" Structure Your Breakable Surfaces">
+		<FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" Description="Scenario tag referencing the BSP you wish to structure lens flares for." />
+		<TextItem Text="Scenario Structure BSP Name" Name="BSPIndex" Description="The name of the BSP tag referenced in the scenario tag" />
+                <Tool Arguments="structure-breakable-surfacess [BSPIndex]" />
+        </MenuItem>
+	<MenuItem Text="Create Animation Tags" Description="Create animation tags from exported animation data from using blitzkrieg in 3DS Max">
+		<DirItem Text="Source Directory" Name="SourceDirectory" Description="Source directory containing the animations exported using blitzkrieg from 3DS Max." />
+		<Tool Arguments="animations [SourceDirectory]" />
+	</MenuItem>
+        <MenuItem Text="Create a Single Bitmap Tag">
+			<FileItem Text="TIFF File" Name="Bitmap" Filter="Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff"
+			Description="Bitmap source file saved in the Tagged Image File Format (TIFF)." />
+		<Tool Arguments="bitmap [Bitmap]" />
+        </MenuItem>
+	<MenuItem Text="Create Bitmap Tags from Folder">
+			<DirItem Text="Source Directory" Name="Bitmaps"
+                        Description="Source directory containing Tagged Image File Format (TIFF) bitmaps." />
+		<Tool Arguments="bitmaps [Bitmaps]" />
+		</MenuItem>
+                <MenuItem Text="Build a Map Cache File" Description="Build a map cache file playable in Halo CE from a Scenario tag">
+		<FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario"
+			Description="Scenario tag to create a map cache file from." />
+		<Tool Arguments="build-cache-file [Scenario]" />
+	</MenuItem>
+	<MenuItem Text="Create Collision Model Tags" Description="Create collision model tags from blitzkrieg exported data">
+		<DirItem Text="Source Directory" Name="Collision" Description="Source directory containing the 'physics' folder that contains the exported blitzkrieg data." />
+		<Tool Arguments="collision-geometry [Collision]" />
+	</MenuItem>
+	<MenuItem Text="Create Hud Message Text Tags" Description="Create Hud Message Text tags from 'hud messages.hmt'">
+		<DirItem Text="Source Directory" Name="Source" Description="Source directory containing the file 'hud messages.hmt' (saved in Unicode Text Format)." />
+		<TextItem Text="Scenario Tag" Name="Scenario" Description="Name of the Scenario tag to reference the Hud Message Text tag. (in the equivalent 'tags' folder to above source directory)" />
+		<Tool Arguments="hud-messages [Source] [Scenario]" />
+	</MenuItem>
+	<MenuItem Text="Create Lightmaps" Description="Create lightmaps for a particular BSP.">
+		<FileItem Text="Scenario Tag" Name="Scenario" Filter="Scenario Tags (*.scenario)|*.scenario" Description="Scenario tag referencing the BSP you wish to generate lightmaps for." />
+		<TextItem Text="Scenario Structure BSP Name" Name="BSPIndex" Description="The name of the BSP tag referenced in the scenario tag" />
+		<ListItem Text="Quality" Name="Quality" Description="The quality to generate the lightmaps at.">
+			<LIItem Text="Debug (Fast)" Value="0" />
+			<LIItem Text="Final" Value="1" />
+		</ListItem>
+		<TextItem Text="Stop Threshold" Name="Threshold" Default="0.005" Description="A decimal at which to stop the process between 0 and 1. Example: 0.0000001 (would stop at 0.000000). Use a higher value to generate lightmaps faster and lower quality, such as 0.005" />
+		<Tool Arguments="lightmaps [Scenario] [BSPIndex] [Quality] [Threshold]" />
+	</MenuItem>
+	<MenuItem Text="Create Model Tags" Description="Create GBXModel tags from data exported from 3DS Max">
+		<DirItem Text="Source Directory" Name="Source" Description="Source directory containing the 'models' folder that contains the exported blitzkrieg data." />
+		<Tool Arguments="model [Source]" />
+	</MenuItem>
+	<MenuItem Text="Create Physics Tags" Description="Create Physics tags from data exported from 3DS Max">
+		<DirItem Text="Source Directory" Name="Source" Description="Source directory containing the 'physics' folder that contains the exported blitzkrieg data." />
+		<Tool Arguments="physics [Source]" />
+	</MenuItem>
+	<MenuItem Text="Create Sound Tags" Description="Create sound tags from either Wav, Xbox, or Ogg sound files.">
+		<DirItem Text="Source Directory" Name="Source" Description="Source directory containing folders that contain certain sound formats. The sound tags created will use the folder names, and use the sound files in the folders as permutations." />
+		<ListItem Text="Platform" Name="Platform" Description="The platform of the sound files in the folders.">
+			<LIItem Text="Xbox (Requires Xbox codec)" Value="xbox" />
+			<LIItem Text="Wav" Value="wav" />
+			<LIItem Text="Ogg" Value="ogg" />
+		</ListItem>
+		<TextItem Text="Quality or Bitrate (Ogg Only)" Name="Ogg Value" Default="22050" Description="The bitrate or quality to convert the Ogg sound files to when creating the tag." />
+		<Tool Arguments="sounds [Source] [Platform] [Ogg Value]" />
+	</MenuItem>
+        <MenuItem Text="Create String List Tags" Description="Create String List tags from 'ANSI' encoded text files in a data folder">
+			<DirItem Text="Source Directory" Name="Source" Description="Source directory containing 'ANSI' encoded text files with '.txt' extension. Each string in the text file must end with ###END-STRING###" />
+			<Tool Arguments="strings [Source]" />
+		</MenuItem>
+		<MenuItem Text="Create Unicode String List Tags" Description="Create String List tags from 'Unicode' encoded text files in a data folder">
+			<DirItem Text="Source Directory" Name="Source" Description="Source directory containing 'Unicode' encoded text files with '.txt' extension. Each string in the text file must end with ###END-STRING###" />
+			<Tool Arguments="unicode-strings [Source]" />
+		</MenuItem>
+        <MenuItem Text="Create Scenario / Structure BSP Tags" Description="Create scenario and structure bsp tags from data exported with blitzkreig from 3DS Max">
+		<DirItem Text="Source Directory" Name="Source" Description="Source directory containing the 'models' folder, that contains the exported blitzkreig data." />
+		<TextItem Text="BSP Name" Name="BSPName" Description="The name to give the final bsp and scenario tags." />
+		<Tool Arguments="structure [Source] [BSPName]" />
+	</MenuItem>
+</ToolEx>

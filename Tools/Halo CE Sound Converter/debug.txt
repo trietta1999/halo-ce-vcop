@@ -1,0 +1,551 @@
+
+
+02.28.17 12:39:40  tool pc 01.00.00.0609 ----------------------------------------------
+02.28.17 12:39:40  reference function: _write_to_error_file
+02.28.17 12:39:40  reference address: 42ca20
+02.28.17 12:39:40  No More Errors For Tools By:  {TLS}Udie   
+
+
+02.28.17 12:40:28  tool pc 01.00.00.0609 ----------------------------------------------
+02.28.17 12:40:28  reference function: _write_to_error_file
+02.28.17 12:40:28  reference address: 42ca20
+02.28.17 12:40:28  No More Errors For Tools By:  {TLS}Udie   
+02.28.17 12:40:28  fixed corrupt tag enum field (sample rate*).
+02.28.17 12:40:28  the sound tag 'sound\music\music\loop' may be corrupt.
+
+
+02.28.17 12:53:23  tool pc 01.00.00.0609 ----------------------------------------------
+02.28.17 12:53:23  reference function: _write_to_error_file
+02.28.17 12:53:23  reference address: 42ca20
+02.28.17 12:53:23  No More Errors For Tools By:  {TLS}Udie   
+
+
+02.28.17 12:53:41  tool pc 01.00.00.0609 ----------------------------------------------
+02.28.17 12:53:41  reference function: _write_to_error_file
+02.28.17 12:53:41  reference address: 42ca20
+02.28.17 12:53:41  No More Errors For Tools By:  {TLS}Udie   
+
+
+02.28.17 12:56:35  tool pc 01.00.00.0609 ----------------------------------------------
+02.28.17 12:56:35  reference function: _write_to_error_file
+02.28.17 12:56:35  reference address: 42ca20
+02.28.17 12:56:35  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.05.17 19:58:52  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 19:58:52  reference function: _write_to_error_file
+05.05.17 19:58:52  reference address: 42ca20
+05.05.17 19:58:52  No More Errors For Tools By:  {TLS}Udie   
+05.05.17 19:59:26  EAX: 0xFFFFFFFE
+05.05.17 19:59:26  EBX: 0x00000001
+05.05.17 19:59:26  ECX: 0x0012F528
+05.05.17 19:59:26  EDX: 0x000002CC
+05.05.17 19:59:26  EDI: 0x0012F528
+05.05.17 19:59:26  ESI: 0x00000000
+05.05.17 19:59:26  EBP: 0x0012F400
+05.05.17 19:59:26  ESP: 0x0012F3F0
+05.05.17 19:59:26  EIP: 0x7C90E514, C3 8D A4 24 ?????
+05.05.17 19:59:26  EXCEPTION halt in \halopc\haloce\source\tag_files\tag_groups.c,#3157: #-1 is not a valid sound_permutations_block index in [#0,#32)
+
+
+05.05.17 20:01:20  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:01:20  reference function: _write_to_error_file
+05.05.17 20:01:20  reference address: 42ca20
+05.05.17 20:01:20  No More Errors For Tools By:  {TLS}Udie   
+05.05.17 20:01:54  EAX: 0xFFFFFFFE
+05.05.17 20:01:54  EBX: 0x00000001
+05.05.17 20:01:54  ECX: 0x0012F528
+05.05.17 20:01:54  EDX: 0x000002CC
+05.05.17 20:01:54  EDI: 0x0012F528
+05.05.17 20:01:54  ESI: 0x00000000
+05.05.17 20:01:54  EBP: 0x0012F400
+05.05.17 20:01:54  ESP: 0x0012F3F0
+05.05.17 20:01:54  EIP: 0x7C90E514, C3 8D A4 24 ?????
+05.05.17 20:01:54  EXCEPTION halt in \halopc\haloce\source\tag_files\tag_groups.c,#3157: #-1 is not a valid sound_permutations_block index in [#0,#32)
+
+
+05.05.17 20:22:14  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:22:14  reference function: _write_to_error_file
+05.05.17 20:22:14  reference address: 42ca20
+05.05.17 20:22:14  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.05.17 20:23:20  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:23:20  reference function: _write_to_error_file
+05.05.17 20:23:20  reference address: 42ca20
+05.05.17 20:23:20  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.05.17 20:47:07  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:47:07  reference function: _write_to_error_file
+05.05.17 20:47:07  reference address: 42ca20
+05.05.17 20:47:07  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.05.17 20:47:25  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:47:25  reference function: _write_to_error_file
+05.05.17 20:47:25  reference address: 42ca20
+05.05.17 20:47:25  No More Errors For Tools By:  {TLS}Udie   
+05.05.17 20:47:48  Couldn't read file nxan1
+
+
+05.05.17 20:48:08  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:48:08  reference function: _write_to_error_file
+05.05.17 20:48:08  reference address: 42ca20
+05.05.17 20:48:08  No More Errors For Tools By:  {TLS}Udie   
+05.05.17 20:48:08  fixed corrupt tag enum field (sample rate*).
+05.05.17 20:48:08  the sound tag 'sound\music\music\nxan\nxan1' may be corrupt.
+
+
+05.05.17 20:48:09  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:48:09  reference function: _write_to_error_file
+05.05.17 20:48:09  reference address: 42ca20
+05.05.17 20:48:09  No More Errors For Tools By:  {TLS}Udie   
+05.05.17 20:48:09  fixed corrupt tag enum field (sample rate*).
+05.05.17 20:48:09  the sound tag 'sound\music\music\nxan\nxan1' may be corrupt.
+
+
+05.05.17 20:48:13  tool pc 01.00.00.0609 ----------------------------------------------
+05.05.17 20:48:13  reference function: _write_to_error_file
+05.05.17 20:48:13  reference address: 42ca20
+05.05.17 20:48:13  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 18:30:32  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 18:30:32  reference function: _write_to_error_file
+05.06.17 18:30:32  reference address: 42ca20
+05.06.17 18:30:32  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:28:39  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:28:39  reference function: _write_to_error_file
+05.06.17 22:28:39  reference address: 42ca20
+05.06.17 22:28:39  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:28:40  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:28:40  reference function: _write_to_error_file
+05.06.17 22:28:40  reference address: 42ca20
+05.06.17 22:28:40  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:28:40  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:28:40  the sound tag 'sound\music\music\qc' may be corrupt.
+
+
+05.06.17 22:28:41  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:28:41  reference function: _write_to_error_file
+05.06.17 22:28:41  reference address: 42ca20
+05.06.17 22:28:41  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:28:41  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:28:41  the sound tag 'sound\music\music\qc' may be corrupt.
+
+
+05.06.17 22:29:29  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:29:29  reference function: _write_to_error_file
+05.06.17 22:29:29  reference address: 42ca20
+05.06.17 22:29:29  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:29:29  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:29:29  the sound tag 'sound\music\music\qc' may be corrupt.
+
+
+05.06.17 22:30:24  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:30:24  reference function: _write_to_error_file
+05.06.17 22:30:24  reference address: 42ca20
+05.06.17 22:30:24  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:30:53  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:30:53  reference function: _write_to_error_file
+05.06.17 22:30:53  reference address: 42ca20
+05.06.17 22:30:53  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:36:46  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:36:46  reference function: _write_to_error_file
+05.06.17 22:36:46  reference address: 42ca20
+05.06.17 22:36:46  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:37:25  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:37:25  reference function: _write_to_error_file
+05.06.17 22:37:25  reference address: 42ca20
+05.06.17 22:37:25  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:41:10  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:41:10  reference function: _write_to_error_file
+05.06.17 22:41:10  reference address: 42ca20
+05.06.17 22:41:10  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:42:27  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:42:27  reference function: _write_to_error_file
+05.06.17 22:42:27  reference address: 42ca20
+05.06.17 22:42:27  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:43:32  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:43:32  reference function: _write_to_error_file
+05.06.17 22:43:32  reference address: 42ca20
+05.06.17 22:43:32  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:43:48  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:43:48  reference function: _write_to_error_file
+05.06.17 22:43:48  reference address: 42ca20
+05.06.17 22:43:48  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:43:48  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:43:48  the sound tag 'sound\music\music\7' may be corrupt.
+
+
+05.06.17 22:44:33  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:44:33  reference function: _write_to_error_file
+05.06.17 22:44:33  reference address: 42ca20
+05.06.17 22:44:33  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:44:33  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:44:33  the sound tag 'sound\music\music\7' may be corrupt.
+
+
+05.06.17 22:45:11  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:45:11  reference function: _write_to_error_file
+05.06.17 22:45:11  reference address: 42ca20
+05.06.17 22:45:11  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:45:11  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:45:11  the sound tag 'sound\music\music\7' may be corrupt.
+
+
+05.06.17 22:45:34  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:45:34  reference function: _write_to_error_file
+05.06.17 22:45:34  reference address: 42ca20
+05.06.17 22:45:34  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:45:34  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:45:34  the sound tag 'sound\music\music\7' may be corrupt.
+
+
+05.06.17 22:46:01  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:46:01  reference function: _write_to_error_file
+05.06.17 22:46:01  reference address: 42ca20
+05.06.17 22:46:01  No More Errors For Tools By:  {TLS}Udie   
+05.06.17 22:46:01  fixed corrupt tag enum field (sample rate*).
+05.06.17 22:46:01  the sound tag 'sound\music\music\7' may be corrupt.
+
+
+05.06.17 22:46:45  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:46:45  reference function: _write_to_error_file
+05.06.17 22:46:45  reference address: 42ca20
+05.06.17 22:46:45  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:47:26  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:47:26  reference function: _write_to_error_file
+05.06.17 22:47:26  reference address: 42ca20
+05.06.17 22:47:26  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:54:36  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:54:36  reference function: _write_to_error_file
+05.06.17 22:54:36  reference address: 42ca20
+05.06.17 22:54:36  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.06.17 22:55:08  tool pc 01.00.00.0609 ----------------------------------------------
+05.06.17 22:55:08  reference function: _write_to_error_file
+05.06.17 22:55:08  reference address: 42ca20
+05.06.17 22:55:08  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.07.17 13:00:18  tool pc 01.00.00.0609 ----------------------------------------------
+05.07.17 13:00:18  reference function: _write_to_error_file
+05.07.17 13:00:18  reference address: 42ca20
+05.07.17 13:00:18  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.07.17 13:01:13  tool pc 01.00.00.0609 ----------------------------------------------
+05.07.17 13:01:13  reference function: _write_to_error_file
+05.07.17 13:01:13  reference address: 42ca20
+05.07.17 13:01:13  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.07.17 13:02:17  tool pc 01.00.00.0609 ----------------------------------------------
+05.07.17 13:02:17  reference function: _write_to_error_file
+05.07.17 13:02:17  reference address: 42ca20
+05.07.17 13:02:17  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.07.17 13:04:39  tool pc 01.00.00.0609 ----------------------------------------------
+05.07.17 13:04:39  reference function: _write_to_error_file
+05.07.17 13:04:39  reference address: 42ca20
+05.07.17 13:04:39  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.26.17 21:46:13  tool pc 01.00.00.0609 ----------------------------------------------
+05.26.17 21:46:13  reference function: _write_to_error_file
+05.26.17 21:46:13  reference address: 42ca20
+05.26.17 21:46:13  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.26.17 21:48:09  tool pc 01.00.00.0609 ----------------------------------------------
+05.26.17 21:48:09  reference function: _write_to_error_file
+05.26.17 21:48:09  reference address: 42ca20
+05.26.17 21:48:09  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.26.17 21:48:50  tool pc 01.00.00.0609 ----------------------------------------------
+05.26.17 21:48:50  reference function: _write_to_error_file
+05.26.17 21:48:50  reference address: 42ca20
+05.26.17 21:48:50  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.26.17 21:54:30  tool pc 01.00.00.0609 ----------------------------------------------
+05.26.17 21:54:30  reference function: _write_to_error_file
+05.26.17 21:54:30  reference address: 42ca20
+05.26.17 21:54:30  No More Errors For Tools By:  {TLS}Udie   
+
+
+05.27.17 18:14:39  tool pc 01.00.00.0609 ----------------------------------------------
+05.27.17 18:14:39  reference function: _write_to_error_file
+05.27.17 18:14:39  reference address: 42ca20
+05.27.17 18:14:39  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:28:51  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:28:51  reference function: _write_to_error_file
+07.25.17 12:28:51  reference address: 42ca20
+07.25.17 12:28:51  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:29:58  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:29:58  reference function: _write_to_error_file
+07.25.17 12:29:58  reference address: 42ca20
+07.25.17 12:29:58  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:31:16  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:31:16  reference function: _write_to_error_file
+07.25.17 12:31:16  reference address: 42ca20
+07.25.17 12:31:16  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:32:14  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:32:14  reference function: _write_to_error_file
+07.25.17 12:32:14  reference address: 42ca20
+07.25.17 12:32:14  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:33:44  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:33:44  reference function: _write_to_error_file
+07.25.17 12:33:44  reference address: 42ca20
+07.25.17 12:33:44  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.25.17 12:35:55  tool pc 01.00.00.0609 ----------------------------------------------
+07.25.17 12:35:55  reference function: _write_to_error_file
+07.25.17 12:35:55  reference address: 42ca20
+07.25.17 12:35:55  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.30.17 12:44:36  tool pc 01.00.00.0609 ----------------------------------------------
+07.30.17 12:44:36  reference function: _write_to_error_file
+07.30.17 12:44:36  reference address: 42ca20
+07.30.17 12:44:36  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.30.17 12:45:12  tool pc 01.00.00.0609 ----------------------------------------------
+07.30.17 12:45:12  reference function: _write_to_error_file
+07.30.17 12:45:12  reference address: 42ca20
+07.30.17 12:45:12  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.30.17 12:47:17  tool pc 01.00.00.0609 ----------------------------------------------
+07.30.17 12:47:17  reference function: _write_to_error_file
+07.30.17 12:47:17  reference address: 42ca20
+07.30.17 12:47:17  No More Errors For Tools By:  {TLS}Udie   
+
+
+07.30.17 12:47:53  tool pc 01.00.00.0609 ----------------------------------------------
+07.30.17 12:47:53  reference function: _write_to_error_file
+07.30.17 12:47:53  reference address: 42ca20
+07.30.17 12:47:53  No More Errors For Tools By:  {TLS}Udie   
+
+
+08.03.17 19:49:00  tool pc 01.00.00.0609 ----------------------------------------------
+08.03.17 19:49:00  reference function: _write_to_error_file
+08.03.17 19:49:00  reference address: 42ca20
+08.03.17 19:49:00  No More Errors For Tools By:  {TLS}Udie   
+
+
+08.07.17 13:23:37  tool pc 01.00.00.0609 ----------------------------------------------
+08.07.17 13:23:37  reference function: _write_to_error_file
+08.07.17 13:23:37  reference address: 42ca20
+08.07.17 13:23:37  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:25:56  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:25:56  reference function: _write_to_error_file
+10.18.17 21:25:56  reference address: 42ca20
+10.18.17 21:25:56  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:27:15  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:27:15  reference function: _write_to_error_file
+10.18.17 21:27:15  reference address: 42ca20
+10.18.17 21:27:15  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:41:05  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:41:05  reference function: _write_to_error_file
+10.18.17 21:41:05  reference address: 42ca20
+10.18.17 21:41:05  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:46:19  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:46:19  reference function: _write_to_error_file
+10.18.17 21:46:19  reference address: 42ca20
+10.18.17 21:46:19  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:47:59  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:47:59  reference function: _write_to_error_file
+10.18.17 21:47:59  reference address: 42ca20
+10.18.17 21:47:59  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.18.17 21:51:31  tool pc 01.00.00.0609 ----------------------------------------------
+10.18.17 21:51:31  reference function: _write_to_error_file
+10.18.17 21:51:31  reference address: 42ca20
+10.18.17 21:51:31  No More Errors For Tools By:  {TLS}Udie   
+
+
+04.12.18 22:18:09  tool pc 01.00.00.0609 ----------------------------------------------
+04.12.18 22:18:09  reference function: _write_to_error_file
+04.12.18 22:18:09  reference address: 42ca20
+04.12.18 22:18:09  No More Errors For Tools By:  {TLS}Udie   
+
+
+04.12.18 22:18:46  tool pc 01.00.00.0609 ----------------------------------------------
+04.12.18 22:18:46  reference function: _write_to_error_file
+04.12.18 22:18:46  reference address: 42ca20
+04.12.18 22:18:46  No More Errors For Tools By:  {TLS}Udie   
+
+
+04.23.18 23:22:58  tool pc 01.00.00.0609 ----------------------------------------------
+04.23.18 23:22:58  reference function: _write_to_error_file
+04.23.18 23:22:58  reference address: 42ca20
+04.23.18 23:22:58  No More Errors For Tools By:  {TLS}Udie   
+
+
+04.23.18 23:37:59  tool pc 01.00.00.0609 ----------------------------------------------
+04.23.18 23:37:59  reference function: _write_to_error_file
+04.23.18 23:37:59  reference address: 42ca20
+04.23.18 23:37:59  No More Errors For Tools By:  {TLS}Udie   
+
+
+04.24.18 21:53:45  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 21:53:45  reference function: _write_to_error_file
+04.24.18 21:53:45  reference address: 42ca20
+04.24.18 21:53:45  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 21:53:45  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 21:53:59  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 21:53:59  reference function: _write_to_error_file
+04.24.18 21:53:59  reference address: 42ca20
+04.24.18 21:53:59  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 21:53:59  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 21:54:29  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 21:54:29  reference function: _write_to_error_file
+04.24.18 21:54:29  reference address: 42ca20
+04.24.18 21:54:29  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 21:54:29  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 21:54:37  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 21:54:37  reference function: _write_to_error_file
+04.24.18 21:54:37  reference address: 42ca20
+04.24.18 21:54:37  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 21:54:38  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 22:00:24  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 22:00:24  reference function: _write_to_error_file
+04.24.18 22:00:24  reference address: 42ca20
+04.24.18 22:00:24  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 22:00:25  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 22:01:00  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 22:01:00  reference function: _write_to_error_file
+04.24.18 22:01:00  reference address: 42ca20
+04.24.18 22:01:00  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 22:01:00  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 22:01:40  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 22:01:40  reference function: _write_to_error_file
+04.24.18 22:01:40  reference address: 42ca20
+04.24.18 22:01:40  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 22:01:41  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 22:01:54  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 22:01:54  reference function: _write_to_error_file
+04.24.18 22:01:54  reference address: 42ca20
+04.24.18 22:01:54  No More Errors For Tools By:  {TLS}Udie   
+04.24.18 22:01:55  MM:  'couldn't open stream.' (ACMERR_NOTPOSSIBLE#512)
+
+
+04.24.18 23:50:38  tool pc 01.00.00.0609 ----------------------------------------------
+04.24.18 23:50:38  reference function: _write_to_error_file
+04.24.18 23:50:38  reference address: 42ca20
+04.24.18 23:50:38  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.10.18 10:32:11  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:32:11  reference function: _write_to_error_file
+10.10.18 10:32:11  reference address: 42ca20
+10.10.18 10:32:11  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.10.18 10:32:31  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:32:31  reference function: _write_to_error_file
+10.10.18 10:32:31  reference address: 42ca20
+10.10.18 10:32:31  No More Errors For Tools By:  {TLS}Udie   
+10.10.18 10:32:31  fixed corrupt tag enum field (sample rate*).
+10.10.18 10:32:31  the sound tag 'sound\music\music\cunganh' may be corrupt.
+
+
+10.10.18 10:33:49  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:33:49  reference function: _write_to_error_file
+10.10.18 10:33:49  reference address: 42ca20
+10.10.18 10:33:49  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.10.18 10:34:46  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:34:46  reference function: _write_to_error_file
+10.10.18 10:34:46  reference address: 42ca20
+10.10.18 10:34:46  No More Errors For Tools By:  {TLS}Udie   
+10.10.18 10:34:46  fixed corrupt tag enum field (sample rate*).
+10.10.18 10:34:46  the sound tag 'sound\music\music\cunganh' may be corrupt.
+
+
+10.10.18 10:35:22  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:35:22  reference function: _write_to_error_file
+10.10.18 10:35:22  reference address: 42ca20
+10.10.18 10:35:22  No More Errors For Tools By:  {TLS}Udie   
+
+
+10.10.18 10:35:58  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:35:58  reference function: _write_to_error_file
+10.10.18 10:35:58  reference address: 42ca20
+10.10.18 10:35:58  No More Errors For Tools By:  {TLS}Udie   
+10.10.18 10:35:58  fixed corrupt tag enum field (sample rate*).
+10.10.18 10:35:58  the sound tag 'sound\music\music\cunganh' may be corrupt.
+
+
+10.10.18 10:36:59  tool pc 01.00.00.0609 ----------------------------------------------
+10.10.18 10:36:59  reference function: _write_to_error_file
+10.10.18 10:36:59  reference address: 42ca20
+10.10.18 10:36:59  No More Errors For Tools By:  {TLS}Udie   
+10.10.18 10:36:59  fixed corrupt tag enum field (sample rate*).
+10.10.18 10:36:59  the sound tag 'sound\music\music\cunganh' may be corrupt.

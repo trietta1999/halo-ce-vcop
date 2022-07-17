@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--Halo Editing Kit Plus: Data Information-->
+<DataInfo>
+	<MapNames>
+		<Data Type="H1" Name="Halo1.txt" />
+		<Data Type="H2" Name="Halo2.txt" />
+	</MapNames>
+	<TagTypes>
+		<Data Type="H1" Name="Halo1.txt" />
+		<Data Type="H2" Name="Halo2.txt" />
+	</TagTypes>
+</DataInfo>

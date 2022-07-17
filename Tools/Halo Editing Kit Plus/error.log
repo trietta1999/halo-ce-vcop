@@ -1,0 +1,25 @@
+
+
+--Exception log--
+
+Date: 6/22/2021
+Assembly Name: System.Windows.Forms
+Product Version: 1.0.3.0
+Exception: Object reference not set to an instance of an object.
+
+
+--Stack Trace--
+
+   at System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   at System.Windows.Forms.Control.set_Visible(Boolean value)
+   at TD.SandDock.ControlLayoutSystem.set_SelectedControl(DockControl value)
+   at TD.SandDock.DocumentLayoutSystem.set_SelectedControl(DockControl value)
+   at TD.SandDock.DockControl.Activate()
+   at TD.SandDock.DocumentContainer.set_ActiveDocument(DockControl value)
+   at TD.SandDock.DockControl.OpenDocked(ContainerDockLocation dockLocation)
+   at TD.SandDock.DockControl.OpenDocked()
+   at TD.SandDock.DockControl.Open()
+   at SteelIXB.HEKPlus.MainForm.ActivateWindow(PluginWindow pw)
+   at SteelIXB.HEKPlus.MainForm.pluginWindowButton_Activate(Object sender, EventArgs e)
+   at TD.SandBar.ToolbarItemBase.OnActivate()
+   at TD.SandBar..(TopLevelMenuItemBase , Boolean , Boolean , Po

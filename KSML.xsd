@@ -1,0 +1,752 @@
+<?xml version="1.0" ?>
+<!-- edited with Visual Studio .NET -->
+<?xml-stylesheet type="text/xsl" href="ksml-html.xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ksml">
+		<xs:annotation>
+			<xs:documentation>		Version 1.0		8 Aug '02		</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="head" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="body" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="b">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="i">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="u">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="text">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="FontRelated" />
+			</xs:choice>
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="face" type="xs:string" use="optional" />
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="selbgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="selcolor" type="xs:string" use="optional" />
+			<xs:attribute name="size" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="label">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="FontRelated" />
+			</xs:choice>
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="face" type="xs:string" use="optional" />
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="selbgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="selcolor" type="xs:string" use="optional" />
+			<xs:attribute name="size" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="br">
+		<xs:complexType>
+			<xs:attribute name="font" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="iframe">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="src" type="xs:anyURI" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="vstarget" type="xs:string" use="optional" />
+			<xs:attribute name="hstarget" type="xs:string" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="font">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+			<xs:attribute name="face" type="xs:string" use="optional" />
+			<xs:attribute name="size" type="xs:string" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="a">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="text">
+					<xs:complexType mixed="false">
+						<xs:attribute name="text" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="id" use="optional" />
+			<xs:attribute name="target" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="disabled" type="xs:boolean" use="optional" />
+			<xs:attribute name="href" type="xs:anyURI" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="align" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="button">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="plugintext" type="xs:string" use="optional" />
+			<xs:attribute name="imagedisabled" type="xs:string" use="optional" />
+			<xs:attribute name="imagemouseover" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="imageup" type="xs:string" use="optional" />
+			<xs:attribute name="imagedown" type="xs:string" use="optional" />
+			<xs:attribute name="soundclick" type="xs:string" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="colormouseover" type="xs:string" use="optional" />
+			<xs:attribute name="buttonface" type="xs:string" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="disabled" type="xs:boolean" use="optional" />
+			<xs:attribute name="href" type="xs:anyURI" use="optional" />
+			<xs:attribute name="target" type="xs:anyURI" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="checkbox">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="checked" type="xs:boolean" use="optional" />
+			<xs:attribute name="imagechecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imageunchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="left" type="xs:anyURI" use="optional" />
+			<xs:attribute name="top" type="xs:anyURI" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="foreground" type="xs:string" use="optional" />
+			<xs:attribute name="background" type="xs:anyURI" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="editbox">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="ime" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="disabled" type="xs:boolean" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="maxlength" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="background" type="xs:anyURI" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="img">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="visible" type="xs:boolean" use="optional" />
+			<xs:attribute name="src" type="xs:anyURI" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="href" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="canvas">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="href" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="listbox">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="option" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="textcolor" type="xs:string" use="optional" />
+			<xs:attribute name="textbackground" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightcolor" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightbackground" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightbackgroundkeyfocus" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="vstarget" type="xs:string" use="optional" />
+			<xs:attributeGroup ref="ScrollbarImages" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="option">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="option" />
+				<xs:element ref="text" />
+			</xs:choice>
+			<xs:attribute name="id" />
+			<xs:attribute name="value" type="xs:string" use="optional" />
+			<xs:attribute name="selected" type="xs:boolean" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="iconclosed" type="xs:anyURI" use="optional" />
+			<xs:attribute name="iconopen" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="note">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+			<xs:attribute name="user" type="xs:string" use="optional" />
+			<xs:attribute name="date" type="xs:string" use="optional" />
+			<xs:attribute name="comment" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="radiobutton">
+		<xs:complexType>
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="checked" type="xs:boolean" use="optional" />
+			<xs:attribute name="imagechecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imageunchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imagedisabledchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imagedisabledunchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imagemouseoverchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imagemouseoverunchecked" type="xs:anyURI" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="foreground" type="xs:string" use="optional" />
+			<xs:attribute name="background" type="xs:string" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="textcolor" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="href" type="xs:anyURI" use="optional" />
+			<xs:attribute name="target" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="disabled" type="xs:boolean" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="revmark">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="text" />
+			</xs:choice>
+			<xs:attribute name="comment" type="xs:string" use="optional" />
+			<xs:attribute name="date" type="xs:string" use="optional" />
+			<xs:attribute name="type" type="xs:string" use="optional" />
+			<xs:attribute name="user" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scroll">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="target" type="xs:IDREF" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="downarrowimageup" type="xs:anyURI" use="optional" />
+			<xs:attribute name="downarrowimagedown" type="xs:anyURI" use="optional" />
+			<xs:attribute name="uparrowimageup" type="xs:anyURI" use="optional" />
+			<xs:attribute name="uparrowimagedown" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimage" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimagehead" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimagefoot" type="xs:anyURI" use="optional" />
+			<xs:attribute name="background" type="xs:anyURI" use="optional" />
+			<xs:attribute name="direction" type="xs:string" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="slider">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="minrange" type="xs:long" use="optional" />
+			<xs:attribute name="maxrange" type="xs:long" use="optional" />
+			<xs:attribute name="curvalue" type="xs:long" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="downarrowimageup" type="xs:anyURI" use="optional" />
+			<xs:attribute name="downarrowimagedown" type="xs:anyURI" use="optional" />
+			<xs:attribute name="uparrowimageup" type="xs:anyURI" use="optional" />
+			<xs:attribute name="uparrowimagedown" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimage" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimagehead" type="xs:anyURI" use="optional" />
+			<xs:attribute name="sliderimagefoot" type="xs:anyURI" use="optional" />
+			<xs:attribute name="background" type="xs:anyURI" use="optional" />
+			<xs:attribute name="direction" type="xs:string" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="select">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="option" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" />
+			<xs:attribute name="disabled" type="xs:boolean" />
+			<xs:attribute name="align" type="xs:string" />
+			<xs:attribute name="left" type="xs:long" />
+			<xs:attribute name="top" type="xs:long" />
+			<xs:attribute name="tabindex" type="xs:long" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="textcolor" type="xs:string" use="optional" />
+			<xs:attribute name="textbackground" type="xs:string" use="optional" />
+			<xs:attribute name="textbackgrounddisabled" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightcolor" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightbackground" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="table">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="tr" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="border" type="xs:string" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="cellpadding" type="xs:long" use="optional" />
+			<xs:attribute name="cellspacing" type="xs:long" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tab">
+		<xs:complexType>
+			<xs:attribute name="font" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="treeview">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="option" />
+			</xs:sequence>
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="highlight" type="xs:string" use="optional" />
+			<xs:attribute name="shadow" type="xs:string" use="optional" />
+			<xs:attribute name="outerborder" type="xs:string" use="optional" />
+			<xs:attribute name="innerborder" type="xs:string" use="optional" />
+			<xs:attribute name="textcolor" type="xs:string" use="optional" />
+			<xs:attribute name="textbackground" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightcolor" type="xs:string" use="optional" />
+			<xs:attribute name="texthighlightbackground" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="tabindex" type="xs:long" use="optional" />
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="tag" type="xs:string" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attributeGroup ref="ScrollbarImages" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="td" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="td">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="border" type="xs:string" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="head">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="meta" minOccurs="0" maxOccurs="unbounded" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="body">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+				<xs:element ref="title" minOccurs="0" maxOccurs="1" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="cursor" type="xs:anyURI" use="optional" />
+			<xs:attribute name="cursorxhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="cursoryhotspot" type="xs:long" use="optional" />
+			<xs:attribute name="background" type="xs:anyURI" use="optional" />
+			<xs:attribute name="bgproperties" type="xs:string" use="optional" />
+			<xs:attribute name="leftmargin" type="xs:long" use="optional" />
+			<xs:attribute name="topmargin" type="xs:long" use="optional" />
+			<xs:attribute name="rightmargin" type="xs:long" use="optional" />
+			<xs:attribute name="bottommargin" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:long" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="title">
+		<xs:complexType mixed="true">
+			<xs:attribute name="bgcolor" type="xs:string" use="optional" />
+			<xs:attribute name="bordercolor" type="xs:string" use="optional" />
+			<xs:attribute name="text" type="xs:string" use="optional" />
+			<xs:attribute name="font" type="xs:string" use="optional" />
+			<xs:attribute name="color" type="xs:string" use="optional" />
+			<xs:attribute name="height" type="xs:long" use="optional" />
+			<xs:attribute name="width" type="xs:long" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="imagebackground" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imageclosebuttonup" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imageclosebuttondown" type="xs:anyURI" use="optional" />
+			<xs:attribute name="imageclosebuttontop" type="xs:long" use="optional" />
+			<xs:attribute name="imageclosebuttonleft" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="meta">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="optional" />
+			<xs:attribute name="content" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="center">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:any />
+			</xs:choice>
+			<xs:attribute name="align" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h1">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h2">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h3">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h4">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h5">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="h6">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="HStyleElements" />
+			</xs:choice>
+			<xs:attributeGroup ref="HStyleAttribs" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ol">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="li" />
+				<xs:group ref="FontRelated" />
+			</xs:choice>
+			<xs:attribute name="id" type="xs:string" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="numeral" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ul">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="FontRelated" />
+				<xs:element ref="li" />
+			</xs:choice>
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="id" type="xs:string" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="src" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="li">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="FontRelated" />
+				<xs:element ref="a" />
+				<xs:element ref="br" />
+				<xs:element ref="text" />
+			</xs:choice>
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="id" type="xs:string" use="optional" />
+			<xs:attribute name="align" type="xs:string" use="optional" />
+			<xs:attribute name="class" type="xs:string" use="optional" />
+			<xs:attribute name="src" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="progress">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="optional" />
+			<xs:attribute name="src" type="xs:anyURI" use="optional" />
+			<xs:attribute name="top" type="xs:long" use="optional" />
+			<xs:attribute name="left" type="xs:long" use="optional" />
+			<xs:attribute name="zindex" type="xs:long" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="p">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="AllNestableControls" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="ScrollbarImages">
+		<xs:attribute name="vs_background" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_keyfocusbackground" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_sliderimage" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_sliderimagehead" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_sliderimagefoot" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_downarrowimageup" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_downarrowimagedown" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_uparrowimageup" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_uparrowimagedown" type="xs:anyURI" use="optional" />
+		<xs:attribute name="vs_joiner" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_keyfocusbackground" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_background" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_sliderimage" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_sliderimagehead" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_sliderimagefoot" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_downarrowimageup" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_downarrowimagedown" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_uparrowimageup" type="xs:anyURI" use="optional" />
+		<xs:attribute name="hs_uparrowimagedown" type="xs:anyURI" use="optional" />
+	</xs:attributeGroup>
+	<xs:group name="FontRelated">
+		<xs:choice>
+			<xs:element ref="font" />
+			<xs:element ref="b" />
+			<xs:element ref="i" />
+			<xs:element ref="u" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="AllNestableControls">
+		<xs:choice>
+			<xs:group ref="FontRelated" />
+			<xs:element ref="text" />
+			<xs:element ref="a" />
+			<xs:element ref="br" />
+			<xs:element ref="label" />
+			<xs:element ref="button" />
+			<xs:element ref="checkbox" />
+			<xs:element ref="editbox" />
+			<xs:element ref="iframe" />
+			<xs:element ref="img" />
+			<xs:element ref="canvas" />
+			<xs:element ref="listbox" />
+			<xs:element ref="ol" />
+			<xs:element ref="p" />
+			<xs:element ref="progress" />
+			<xs:element ref="radiobutton" />
+			<xs:element ref="scroll" />
+			<xs:element ref="slider" />
+			<xs:element ref="select" />
+			<xs:element ref="tab" />
+			<xs:element ref="table" />
+			<xs:element ref="treeview" />
+			<xs:element ref="ul" />
+			<xs:element ref="li" />
+			<xs:element ref="h1" />
+			<xs:element ref="h2" />
+			<xs:element ref="h3" />
+			<xs:element ref="h4" />
+			<xs:element ref="h5" />
+			<xs:element ref="h6" />
+			<xs:element ref="note" />
+			<xs:element ref="revmark" />
+		</xs:choice>
+	</xs:group>
+	<xs:group name="HStyleElements">
+		<xs:choice>
+			<xs:group ref="FontRelated" />
+			<xs:element ref="a" />
+			<xs:element ref="text" />
+		</xs:choice>
+	</xs:group>
+	<xs:attributeGroup name="HStyleAttribs">
+		<xs:attribute name="face" use="optional" />
+		<xs:attribute name="size" use="optional" />
+		<xs:attribute name="color" use="optional" />
+		<xs:attribute name="font" use="optional" />
+	</xs:attributeGroup>
+</xs:schema>

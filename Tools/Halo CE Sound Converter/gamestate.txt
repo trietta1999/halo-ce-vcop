@@ -1,0 +1,76 @@
+                                  header              (null)       332
+                            game globals              (null)       276
+                       game time globals              (null)        32
+                 game allegiance globals              (null)       180
+                    hud scripted globals              (null)         4
+                           hud messaging              (null)      1160
+                      hud unit interface              (null)        92
+                    hud weapon interface              (null)       124
+                          hud nav points              (null)        48
+                   motion sensor (radar)         sensor data      1392
+                    first person weapons              (null)      7840
+                        scenario globals              (null)       124
+                      director scripting              (null)         4
+             cached object render states          data array     65592
+                                  widget          data array       824
+                                    flag          data array     11696
+                                 antenna          data array      8456
+                                    glow          data array      4888
+                          glow particles          data array     51256
+                           light volumes          data array      2104
+                              lightnings          data array      2104
+                            unit globals              (null)         8
+                           device groups          data array      8248
+                                  lights          data array    111160
+                          lights globals              (null)         4
+                                   light  cluster references      2048
+                 cluster light reference          data array     24632
+                 light cluster reference          data array     24632
+                                  object          data array     24632
+                                 objects         memory pool   2097208
+                          object globals              (null)       152
+                        object name list              (null)      2048
+                      collideable object  cluster references      2048
+    cluster collideable object reference          data array     24632
+    collideable object cluster reference          data array     24632
+                   noncollideable object  cluster references      2048
+ cluster noncollideable object reference          data array     24632
+ noncollideable object cluster reference          data array     24632
+                structure detail objects              (null)     42032
+                        structure decals              (null)         4
+               breakable surface globals              (null)     16900
+                                  decals          data array    114744
+                           decal globals              (null)     10252
+                                 players          data array      8248
+                                   teams          data array      1080
+                         players globals              (null)       152
+                  player control globals              (null)        80
+                                contrail          data array     17464
+                          contrail point          data array     57400
+                                particle          data array    114744
+                                  effect          data array     64568
+                         effect location          data array     30776
+                        particle systems          data array     22072
+               particle system particles          data array     65592
+                           sound classes              (null)       612
+                   object looping sounds          data array     53304
+                      game sound globals              (null)        12
+                          player effects              (null)       296
+                              ai globals              (null)      2268
+                                   actor          data array    468024
+                                   swarm          data array      4920
+                         swarm component          data array     16440
+                                    prop          data array    239672
+                               encounter          data array     13880
+                                   squad               squad     32768
+                                 platoon             platoon      4096
+                              ai pursuit          data array     10296
+               ai communication dialogue              (null)      1664
+                ai communication replies              (null)       720
+                         ai conversation          data array       856
+                      object list header          data array       632
+                   list object reference          data array      1592
+                               hs thread          data array    137272
+                              hs globals          data array      8248
+                     recorded animations          data array      6456
+                       cinematic globals              (null)        28

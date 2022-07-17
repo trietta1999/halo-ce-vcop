@@ -1,0 +1,9 @@
+tool build-cache-file levels\vcop1-intro\a10
+tool build-cache-file levels\vcop1-p1\vcop1-p1
+tool build-cache-file levels\vcop1-p2\vcop1-p2
+tool build-cache-file levels\vcop1-p3\vcop1-p3
+tool build-cache-file levels\vcop1-p4\a30
+tool build-cache-file levels\vcop1-p5\a50
+tool build-cache-file levels\vcop1-p6\vcop1-p6
+tool build-cache-file levels\vcop1-p7\vcop1-p7
+tool build-cache-file levels\vcop1-ending\vcop1-ending
