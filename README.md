@@ -13,3 +13,8 @@ Thông tin dự án trên website: https://halovcop.webnode.vn/
 Halo CE Maps: http://hce.halomaps.org/
 
 Halo CE3: https://haloce3.com/
+
+# Liên hệ:
+Email: tadongthuyuyen@gmail.com
+
+Facebook: https://www.facebook.com/triet.ta.073/ 
