@@ -1,0 +1,170 @@
+(script dormant to_plane
+	(show_hud_help_text true)
+	(hud_set_help_text obj14)
+	(hud_set_objective_text obj14)
+	(sleep 250)
+	(show_hud_help_text false)
+)
+
+(script startup action
+	
+	(object_destroy ex)
+	(unit_set_enterable_by_player fal 0)
+	
+	(cinematic_start)
+	(cinematic_set_title vcop)
+	(sound_looping_start levels\b30\music\b30_01 none 1)
+	(camera_control 1)
+	(player_enable_input 0)
+	(camera_set cam1 100)
+	(sleep 150)
+	(vehicle_hover fal 1)
+	(camera_set cam2 100)
+	(sleep 50)
+	(camera_set cam4 100)
+	(sleep 50)
+	(camera_set cam5 100)
+	(sleep 50)
+	(camera_set cam6 100)
+	(sleep 50)
+	(camera_set cam7 100)
+	(sleep 50)
+	(camera_set cam8 100)
+	(sleep 150)
+	(cinematic_stop)
+	(camera_control 0)
+	(object_destroy player)
+	(volume_teleport_players_not_inside player player)
+	(player_enable_input 1)
+	(game_save_totally_unsafe)
+
+	(ai_place enemy/a)
+	(ai_place enemy/b)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj9)
+	(hud_set_objective_text obj9)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(activate_team_nav_point_flag default player point1 0)
+	(Sleep_until (= (ai_living_count enemy)0))
+	(activate_team_nav_point_flag default player point2 0)
+	(sleep_until (volume_test_objects tri2 (players))1)
+	(deactivate_team_nav_point_flag player point2)
+	(activate_team_nav_point_flag default player point3 0)
+	(game_save_totally_unsafe)
+	
+	(ai_place enemy/c)
+	(ai_place enemy/d)
+	(ai_place enemy/e)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj10)
+	(hud_set_objective_text obj10)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(Sleep_until (= (ai_living_count enemy)0))
+	(deactivate_team_nav_point_flag player point3)
+	(game_save_totally_unsafe)
+	(activate_team_nav_point_flag default player point4 0)
+
+	(ai_place enemy/f)
+	(ai_place enemy/g)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj11)
+	(hud_set_objective_text obj11)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(Sleep_until (= (ai_living_count enemy)0))
+	(deactivate_team_nav_point_flag player point4)
+	(game_save_totally_unsafe)
+	(activate_team_nav_point_flag default player point5 0)
+
+	(ai_place enemy/h)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj12)
+	(hud_set_objective_text obj12)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(Sleep_until (= (ai_living_count enemy)0))
+	(deactivate_team_nav_point_flag player point6)
+	(activate_team_nav_point_flag default player point7 0)
+
+	(sleep_until (volume_test_objects tri4 (players))1)
+	(deactivate_team_nav_point_flag player point7)
+	(activate_team_nav_point_flag default player point8 0)
+	(object_create ex)
+	(object_destroy door)
+	(sleep 10)
+	(object_destroy ex)
+
+	(game_save_totally_unsafe)
+
+	(ai_place enemy/i)
+	(ai_place enemy/j)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj13)
+	(hud_set_objective_text obj13)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(Sleep_until (= (ai_living_count enemy)0))
+	(game_save_totally_unsafe)
+	(sleep_until (volume_test_objects tri5 (players))1)
+
+	(ai_place enemy/boss)
+	(deactivate_team_nav_point_flag player point8)
+	(ai_allegiance player human)
+	(player_enable_input 0)
+	(camera_control 1)
+	(camera_set cam9 100)
+	(sleep 150)
+	(camera_control 0)
+	(player_enable_input 1)
+	(ai_allegiance_remove player human)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj5)
+	(hud_set_objective_text obj5)
+	(sleep 250)
+	(show_hud_help_text false)
+	
+	(Sleep_until (= (ai_living_count enemy)0))
+	(wake to_plane)
+	(game_save_totally_unsafe)
+	
+	(activate_team_nav_point_object default player fal 0)
+	(unit_set_enterable_by_player fal 1)
+	(sleep_until (vehicle_test_seat_list fal "w-driver" (players)) 1)
+	(vehicle_hover fal 0)
+	(deactivate_team_nav_point_object player fal)
+	(player_enable_input 0)
+	
+	(fade_out 0 0 0 100)
+	(game_save_totally_unsafe)
+	(sleep 200)
+	(map_name vcop2-p4)
+)
+
+(script startup tri1
+(sleep_until (volume_test_objects tri1 (players))1)
+(deactivate_team_nav_point_flag player point1)
+)
+
+(script startup tri3
+(sleep_until (volume_test_objects tri3 (players))1)
+(deactivate_team_nav_point_flag player point5)
+(activate_team_nav_point_flag default player point6 0)
+)
+
+(script continuous weapons
+(object_create shot)
+(object_create pis)
+)

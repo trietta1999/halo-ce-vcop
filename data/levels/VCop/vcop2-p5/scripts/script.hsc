@@ -1,0 +1,13 @@
+(script startup action
+	(device_operates_automatically_set door 0)
+	(device_set_position_immediate l1 0)
+	(device_set_position_immediate l2 0)
+	(device_set_position_immediate l3 0)
+	(device_set_position_immediate l4 0)
+	(device_set_position_immediate l5 0)
+	(device_set_position_immediate l6 0)
+	(device_set_position_immediate l7 0)
+	(device_set_position_immediate l8 0)
+	(device_set_position_immediate l9 0)
+	(device_set_position_immediate l10 0)
+)

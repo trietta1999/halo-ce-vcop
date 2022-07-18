@@ -1,0 +1,33 @@
+(script startup action
+(sound_looping_start levels\b30\music\b30_01 none 1)
+(device_operates_automatically_set ele 0)
+(ai_kill enemy)
+(activate_team_nav_point_flag default player point1 0)
+(sleep_until (volume_test_objects tri1 (players))1)
+(device_operates_automatically_set door1 0)
+(deactivate_team_nav_point_flag player point1)
+(player_enable_input 0)
+(sleep 500)
+(player_enable_input 1)
+(device_operates_automatically_set ele 1)
+(game_save)
+(sleep_until (volume_test_objects tri2 (players))1)
+(device_operates_automatically_set door2 0)
+(player_enable_input 0)
+(sleep 200)
+(player_enable_input 1)
+(game_save)
+(activate_team_nav_point_flag default player point2 0)
+(sleep_until (volume_test_objects tri3 (players))1)
+(map_name vcop3-p10)
+)
+
+(script continuous e-f
+(sleep_until (volume_test_objects e-f (players)) 1)
+(switch_bsp 1)
+)
+
+(script continuous f-e
+(sleep_until (volume_test_objects f-e (players)) 1)
+(switch_bsp 0)
+)
