@@ -1,15 +1,92 @@
-(global boolean fal_ch false)
-(global boolean tele_ch false)
-(global boolean sh_boss_cnt false)
-(global real cnt 0)
-(global real cnt1 0)
-(global real cnt2 0)
-(global real cnt3 0)
-(global real cnt4 0)
-(global real cnt5 0)
-(global real cnt6 0)
-(global real cnt_s 0)
-(global real cnt_avg 0)
+(global boolean is_in_falcon false)
+(global boolean is_teleport false)
+(global boolean is_boss false)
+(global real get_shield_1 0)
+(global real get_shield_2 0)
+(global real get_shield_3 0)
+(global real get_shield_4 0)
+(global real get_shield_5 0)
+(global real get_shield_6 0)
+(global real sum_shield 0)
+(global real avg_shield 0)
+
+(script continuous run_boss
+	(if (= is_boss true)
+	(begin
+		(set get_shield_1 (unit_get_shield (unit (list_get (ai_actors enemy) 0))))
+		(set get_shield_2 (unit_get_shield (unit (list_get (ai_actors enemy) 1))))
+		(set get_shield_3 (unit_get_shield (unit (list_get (ai_actors enemy) 2))))
+		(set get_shield_4 (unit_get_shield (unit (list_get (ai_actors enemy) 3))))
+		(set get_shield_5 (unit_get_shield (unit (list_get (ai_actors enemy) 4))))
+		(set get_shield_6 (unit_get_shield (unit (list_get (ai_actors enemy) 5))))
+		
+		(if (<= get_shield_1 -1) (set get_shield_1 0))
+		(if (<= get_shield_2 -1) (set get_shield_2 0))
+		(if (<= get_shield_3 -1) (set get_shield_3 0))
+		(if (<= get_shield_4 -1) (set get_shield_4 0))
+		(if (<= get_shield_5 -1) (set get_shield_5 0))
+		(if (<= get_shield_6 -1) (set get_shield_6 0))
+		
+		(set sum_shield (* (+ get_shield_1 get_shield_2 get_shield_3 get_shield_4 get_shield_5 get_shield_6) 1000))
+		(set avg_shield (/ sum_shield 6))
+		
+		(cond
+			((<= avg_shield 0) (hud_set_timer_time 0 0))
+			((and (> avg_shield 0) (<= avg_shield 50)) (hud_set_timer_time 0 31))
+			((and (> avg_shield 50) (<= avg_shield 100)) (hud_set_timer_time 0 61))
+			((and (> avg_shield 100) (<= avg_shield 150)) (hud_set_timer_time 0 91))
+			((and (> avg_shield 150) (<= avg_shield 200)) (hud_set_timer_time 0 121))
+			((and (> avg_shield 200) (<= avg_shield 250)) (hud_set_timer_time 0 151))
+			((and (> avg_shield 250) (<= avg_shield 300)) (hud_set_timer_time 0 181))
+			((and (> avg_shield 300) (<= avg_shield 350)) (hud_set_timer_time 0 211))
+			((and (> avg_shield 350) (<= avg_shield 400)) (hud_set_timer_time 0 241))
+			((and (> avg_shield 400) (<= avg_shield 450)) (hud_set_timer_time 0 271))
+			((and (> avg_shield 450) (<= avg_shield 500)) (hud_set_timer_time 0 301))
+			((and (> avg_shield 500) (<= avg_shield 550)) (hud_set_timer_time 0 331))
+			((and (> avg_shield 550) (<= avg_shield 600)) (hud_set_timer_time 0 361))
+			((and (> avg_shield 600) (<= avg_shield 650)) (hud_set_timer_time 0 391))
+			((and (> avg_shield 650) (<= avg_shield 700)) (hud_set_timer_time 0 421))
+			((and (> avg_shield 700) (<= avg_shield 750)) (hud_set_timer_time 0 451))
+			((and (> avg_shield 750) (<= avg_shield 800)) (hud_set_timer_time 0 481))
+			((and (> avg_shield 800) (<= avg_shield 850)) (hud_set_timer_time 0 511))
+			((and (> avg_shield 850) (<= avg_shield 900)) (hud_set_timer_time 0 541))
+			((and (> avg_shield 900) (<= avg_shield 950)) (hud_set_timer_time 0 571))
+			((and (> avg_shield 950) (<= avg_shield 1000)) (hud_set_timer_time 0 601))
+		)
+	))
+)
+
+(script continuous run_teleport
+	(if (and (= (volume_test_objects tri3 (players)) 1) (= is_teleport false))
+	(begin
+		(object_teleport fal tele)
+		(set is_teleport true)
+		(sleep 50)
+		(game_save_totally_unsafe)
+	))
+	(if (and (= (volume_test_objects tri3 (players)) 1) (= is_teleport true))
+	(begin
+		(cinematic_set_title warn)
+		(fade_out 255 0 0 50)
+		(sleep 150)
+		(game_revert)
+	))
+)
+
+(script continuous run_falcon_driver
+	(if (and (= (vehicle_test_seat_list fal "w-driver" (players)) 0) (= is_in_falcon true))
+		(vehicle_load_magic fal "W-driver" (players))
+	)
+)
+
+(script continuous run_check_trigger_1_2
+	(if (or (= (volume_test_objects tri1 (players)) 1) (= (volume_test_objects tri2 (players)) 1))
+	(begin
+		(fade_out 255 0 0 50)
+		(sleep 100)
+		(game_revert)
+	))
+)
 
 (script startup action
 	(object_destroy phan)
@@ -52,9 +129,9 @@
 	(sleep_until (vehicle_test_seat_list fal "w-driver" (players)) 1)
 	(deactivate_team_nav_point_object player fal)
 	(activate_team_nav_point_flag default player ship2 0)
-	(set fal_ch true)
+	(set is_in_falcon true)
 	
-	(sleep_until (= tele_ch true) 1)
+	(sleep_until (= is_teleport true) 1)
 	
 	(ai_erase friends)
 	
@@ -92,7 +169,7 @@
 	(player_enable_input 0)
 	(sound_looping_stop levels\b30\music\b30_01)
 	(sound_looping_start sound\music\covenant_dance\covenant_dance none 1)
-	(set fal_ch false)
+	(set is_in_falcon false)
 	(deactivate_team_nav_point_flag player ship1)
 	(vehicle_unload fal "")
 	(unit_set_enterable_by_player fal 0)
@@ -153,14 +230,14 @@
 	
 	(show_hud_timer 1)
 	(hud_set_timer_position 370 0 top_right)
-	(set sh_boss_cnt true)
+	(set is_boss true)
 	
 	(show_hud_help_text true)
 	(hud_set_help_text obj5)
 	(hud_set_objective_text obj5)
 	
 	(sleep_until (= (ai_living_count enemy) 0))
-	(set sh_boss_cnt false)
+	(set is_boss false)
 	(show_hud_help_text false)
 	(show_hud_timer 0)
 	(game_save_totally_unsafe)
@@ -168,83 +245,4 @@
 	(fade_out 0 0 0 100)
 	(sleep 150)
 	(map_name c10)
-)
-
-(script continuous sh_boss_cnt0
-	(if (= sh_boss_cnt true)
-	(begin
-		(set cnt1 (unit_get_shield (unit (list_get (ai_actors enemy) 0))))
-		(set cnt2 (unit_get_shield (unit (list_get (ai_actors enemy) 1))))
-		(set cnt3 (unit_get_shield (unit (list_get (ai_actors enemy) 2))))
-		(set cnt4 (unit_get_shield (unit (list_get (ai_actors enemy) 3))))
-		(set cnt5 (unit_get_shield (unit (list_get (ai_actors enemy) 4))))
-		(set cnt6 (unit_get_shield (unit (list_get (ai_actors enemy) 5))))
-		
-		(if (<= cnt1 -1) (set cnt1 0))
-		(if (<= cnt2 -1) (set cnt2 0))
-		(if (<= cnt3 -1) (set cnt3 0))
-		(if (<= cnt4 -1) (set cnt4 0))
-		(if (<= cnt5 -1) (set cnt5 0))
-		(if (<= cnt6 -1) (set cnt6 0))
-		
-		;(set cnt (ai_living_count enemy))
-		(set cnt_s (* (+ cnt1 cnt2 cnt3 cnt4 cnt5 cnt6) 1000))
-		(set cnt_avg (/ cnt_s 6))
-		
-		(cond
-			((<= cnt_avg 0) (hud_set_timer_time 0 0))
-			((and (> cnt_avg 0) (<= cnt_avg 50)) (hud_set_timer_time 0 31))
-			((and (> cnt_avg 50) (<= cnt_avg 100)) (hud_set_timer_time 0 61))
-			((and (> cnt_avg 100) (<= cnt_avg 150)) (hud_set_timer_time 0 91))
-			((and (> cnt_avg 150) (<= cnt_avg 200)) (hud_set_timer_time 0 121))
-			((and (> cnt_avg 200) (<= cnt_avg 250)) (hud_set_timer_time 0 151))
-			((and (> cnt_avg 250) (<= cnt_avg 300)) (hud_set_timer_time 0 181))
-			((and (> cnt_avg 300) (<= cnt_avg 350)) (hud_set_timer_time 0 211))
-			((and (> cnt_avg 350) (<= cnt_avg 400)) (hud_set_timer_time 0 241))
-			((and (> cnt_avg 400) (<= cnt_avg 450)) (hud_set_timer_time 0 271))
-			((and (> cnt_avg 450) (<= cnt_avg 500)) (hud_set_timer_time 0 301))
-			((and (> cnt_avg 500) (<= cnt_avg 550)) (hud_set_timer_time 0 331))
-			((and (> cnt_avg 550) (<= cnt_avg 600)) (hud_set_timer_time 0 361))
-			((and (> cnt_avg 600) (<= cnt_avg 650)) (hud_set_timer_time 0 391))
-			((and (> cnt_avg 650) (<= cnt_avg 700)) (hud_set_timer_time 0 421))
-			((and (> cnt_avg 700) (<= cnt_avg 750)) (hud_set_timer_time 0 451))
-			((and (> cnt_avg 750) (<= cnt_avg 800)) (hud_set_timer_time 0 481))
-			((and (> cnt_avg 800) (<= cnt_avg 850)) (hud_set_timer_time 0 511))
-			((and (> cnt_avg 850) (<= cnt_avg 900)) (hud_set_timer_time 0 541))
-			((and (> cnt_avg 900) (<= cnt_avg 950)) (hud_set_timer_time 0 571))
-			((and (> cnt_avg 950) (<= cnt_avg 1000)) (hud_set_timer_time 0 601))
-		)
-	))
-)
-
-(script continuous tele
-	(if (and (= (volume_test_objects tri3 (players)) 1) (= tele_ch false))
-	(begin
-		(object_teleport fal tele)
-		(set tele_ch true)
-		(sleep 50)
-		(game_save_totally_unsafe)
-	))
-	(if (and (= (volume_test_objects tri3 (players)) 1) (= tele_ch true))
-	(begin
-		(cinematic_set_title warn)
-		(fade_out 255 0 0 50)
-		(sleep 150)
-		(game_revert)
-	))
-)
-
-(script continuous fal_driver
-	(if (and (= (vehicle_test_seat_list fal "w-driver" (players)) 0) (= fal_ch true))
-		(vehicle_load_magic fal "W-driver" (players))
-	)
-)
-
-(script continuous tri_1_2_ch
-	(if (or (= (volume_test_objects tri1 (players)) 1) (= (volume_test_objects tri2 (players)) 1))
-	(begin
-		(fade_out 255 0 0 50)
-		(sleep 100)
-		(game_revert)
-	))
 )

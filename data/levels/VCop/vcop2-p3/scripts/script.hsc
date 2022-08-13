@@ -1,4 +1,4 @@
-(script dormant to_plane
+(script dormant call_to_plane
 	(show_hud_help_text true)
 	(hud_set_help_text obj14)
 	(hud_set_objective_text obj14)
@@ -6,8 +6,23 @@
 	(show_hud_help_text false)
 )
 
+(script startup start_trigger_1
+	(sleep_until (volume_test_objects tri1 (players))1)
+	(deactivate_team_nav_point_flag player point1)
+)
+
+(script startup start_trigger_3
+	(sleep_until (volume_test_objects tri3 (players))1)
+	(deactivate_team_nav_point_flag player point5)
+	(activate_team_nav_point_flag default player point6 0)
+)
+
+(script continuous run_weapon
+	(object_create shot)
+	(object_create pis)
+)
+
 (script startup action
-	
 	(object_destroy ex)
 	(unit_set_enterable_by_player fal 0)
 	
@@ -137,7 +152,7 @@
 	(show_hud_help_text false)
 	
 	(Sleep_until (= (ai_living_count enemy)0))
-	(wake to_plane)
+	(wake call_to_plane)
 	(game_save_totally_unsafe)
 	
 	(activate_team_nav_point_object default player fal 0)
@@ -151,20 +166,4 @@
 	(game_save_totally_unsafe)
 	(sleep 200)
 	(map_name vcop2-p4)
-)
-
-(script startup tri1
-(sleep_until (volume_test_objects tri1 (players))1)
-(deactivate_team_nav_point_flag player point1)
-)
-
-(script startup tri3
-(sleep_until (volume_test_objects tri3 (players))1)
-(deactivate_team_nav_point_flag player point5)
-(activate_team_nav_point_flag default player point6 0)
-)
-
-(script continuous weapons
-(object_create shot)
-(object_create pis)
 )

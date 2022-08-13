@@ -1,15 +1,15 @@
 (global boolean in_war false)
-(global boolean sh_sni false)
-(global boolean sh_sni_cnt false)
-(global short cnt 0)
+(global boolean is_sniper false)
+(global boolean is_sniper_counter false)
+(global short count 0)
 
-(script dormant get_war
+(script dormant call_get_warthog
 	(sleep_until (vehicle_test_seat_list war "W-driver" (players)) 1)
 	(vehicle_load_magic war "" (ai_actors friends))
 	(deactivate_team_nav_point_object player war)
 )
 
-(script continuous ch_seat
+(script continuous run_check_seat
 	(if (= in_war true)
 		(if (= (vehicle_test_seat_list war "W-gunner" (players)) 0)
 			(vehicle_load_magic war "W-gunner" (players))
@@ -17,8 +17,8 @@
 	)
 )
 
-(script continuous sh_sniper
-	(if (= sh_sni true)
+(script continuous run_activate_sniper
+	(if (= is_sniper true)
 	(begin
 		(activate_team_nav_point_object default player (list_get (ai_actors enemy) 0) 0)
 		(activate_team_nav_point_object default player (list_get (ai_actors enemy) 1) 0)
@@ -29,20 +29,20 @@
 	))
 )
 
-(script continuous sh_sni_cnt0
-	(if (= sh_sni_cnt true)
+(script continuous run_sniper_counter
+	(if (= is_sniper_counter true)
 	(begin
-		(set cnt (ai_living_count enemy))
-		(hud_set_timer_time 0 (+ cnt 1))
+		(set count (ai_living_count enemy))
+		(hud_set_timer_time 0 (+ count 1))
 	))
 )
 
-(script dormant to_sniper
+(script dormant call_to_sniper
 	(ai_place enemy/sni)
 	
 	(show_hud_timer 1)
 	(hud_set_timer_position 70 40 top_right)
-	(set sh_sni_cnt true)
+	(set is_sniper_counter true)
 	
 	(show_hud_help_text true)
 	(hud_set_help_text obj7)
@@ -51,12 +51,12 @@
 	(show_hud_help_text false)
 	
 	(sleep_until (= (ai_living_count enemy) 15))
-	(set sh_sni true)
-	(set sh_sni_cnt true)
+	(set is_sniper true)
+	(set is_sniper_counter true)
 	
 	(sleep_until (= (ai_living_count enemy) 0))
-	(set sh_sni false)
-	(set sh_sni_cnt false)
+	(set is_sniper false)
+	(set is_sniper_counter false)
 	(show_hud_timer 0)
 	
 	(game_save_totally_unsafe)
@@ -69,7 +69,7 @@
 	(activate_team_nav_point_object default player war 0)
 	(unit_set_enterable_by_player war 1)
 	
-	(wake get_war)
+	(wake call_get_warthog)
 	
 	(show_hud_help_text true)
 	(hud_set_help_text obj8)
@@ -110,7 +110,7 @@
 	(map_name vcop2-p2)
 )
 
-(script dormant to_run2
+(script dormant call_to_run_2
 	(player_enable_input 0)
 	
 	(fade_out 0 0 0 50)
@@ -209,20 +209,10 @@
 	
 	(sleep 100)
 	
-	(wake to_sniper)
+	(wake call_to_sniper)
 )
 
-(script startup tri_dr_6
-	(sleep_until (volume_test_objects tri_dr6 (ai_actors enemy/dr6)) 1)
-	(vehicle_unload yo1 "")
-)
-
-(script startup tri_dr_7
-	(sleep_until (volume_test_objects tri_dr7 (ai_actors enemy/dr7)) 1)
-	(vehicle_unload yo2 "")
-)
-
-(script dormant to_run1
+(script dormant call_to_run_1
 	(player_enable_input 0)
 	(unit_set_enterable_by_player war 1)
 	
@@ -280,10 +270,20 @@
 	(game_save_totally_unsafe)
 	(sleep 100)
 	
-	(wake to_run2)
+	(wake call_to_run_2)
 )
 
-(script startup ch_esc_1
+(script startup start_trigger_driver_6
+	(sleep_until (volume_test_objects tri_dr6 (ai_actors enemy/dr6)) 1)
+	(vehicle_unload yo1 "")
+)
+
+(script startup start_trigger_driver_7
+	(sleep_until (volume_test_objects tri_dr7 (ai_actors enemy/dr7)) 1)
+	(vehicle_unload yo2 "")
+)
+
+(script startup start_check_escape_driver_1_2
 	(sleep_until (or (volume_test_objects tri_dr1 (ai_actors enemy/dr1)) (volume_test_objects 
 	tri_dr2 (ai_actors enemy/dr2))) 1)
 	
@@ -298,7 +298,7 @@
 	(game_revert)
 )
 
-(script startup ch_esc_2
+(script startup start_check_escape_driver_3_4
 	(sleep_until (or (volume_test_objects tri_dr1 (ai_actors enemy/dr3)) (volume_test_objects 
 	tri_dr4 (ai_actors enemy/dr4))) 1)
 	
@@ -313,24 +313,41 @@
 	(game_revert)
 )
 
-(script startup ch_esc1
+(script startup start_check_escape_1
 	(sleep_until (volume_test_objects tri_dr1_0 (ai_actors enemy/dr1)) 1)
 	(activate_team_nav_point_object default player r_cad1 0)
 )
 
-(script startup ch_esc2
+(script startup start_check_escape_2
+	(sleep_until (volume_test_objects tri_dr2_0 (ai_actors enemy/dr2)) 1)
+	(activate_team_nav_point_object default player r_cad2 0)
+)
+
+(script startup start_check_escape_3
 	(sleep_until (volume_test_objects tri_dr1_0 (ai_actors enemy/dr3)) 1)
 	(activate_team_nav_point_object default player cad3 0)
 )
 
-(script startup ch_esc3
+(script startup start_check_escape_4
 	(sleep_until (volume_test_objects tri_dr4_0 (ai_actors enemy/dr4)) 1)
 	(activate_team_nav_point_object default player cad4 0)
 )
 
-(script startup ch_esc4
-	(sleep_until (volume_test_objects tri_dr2_0 (ai_actors enemy/dr2)) 1)
-	(activate_team_nav_point_object default player r_cad2 0)
+(script startup start_trigger_1
+	(sleep_until (volume_test_objects tri1 (players)) 1)
+	(sound_looping_stop sound\music\covenant_dance\covenant_dance)
+	(sound_looping_start sound\music\drumrun\drumrun none 1)
+	
+	(deactivate_team_nav_point_flag player point1)
+	(device_set_position door 0)
+	(device_operates_automatically_set door 0)
+	(ai_follow_target_disable friends)
+	(ai_teleport_to_starting_location friends)
+	
+	(show_hud_help_text true)
+	(hud_set_help_text obj3)
+	(sleep 250)
+	(show_hud_help_text false)
 )
 
 (script startup action
@@ -384,22 +401,5 @@
 	(game_save_totally_unsafe)
 	
 	(sleep 100)	
-	(wake to_run1)
-)
-
-(script startup tri1
-	(sleep_until (volume_test_objects tri1 (players)) 1)
-	(sound_looping_stop sound\music\covenant_dance\covenant_dance)
-	(sound_looping_start sound\music\drumrun\drumrun none 1)
-	
-	(deactivate_team_nav_point_flag player point1)
-	(device_set_position door 0)
-	(device_operates_automatically_set door 0)
-	(ai_follow_target_disable friends)
-	(ai_teleport_to_starting_location friends)
-	
-	(show_hud_help_text true)
-	(hud_set_help_text obj3)
-	(sleep 250)
-	(show_hud_help_text false)
+	(wake call_to_run_1)
 )

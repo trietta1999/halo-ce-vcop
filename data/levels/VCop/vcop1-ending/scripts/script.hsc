@@ -1,3 +1,10 @@
+(script startup start_end
+	(sleep_until (= (game_time) 2523) 1)
+	(sound_looping_stop "sound\music\brothers_in_arms\brothers in arms")
+	(cinematic_stop)
+	(game_save_totally_unsafe)
+)
+
 (script startup action
 	(cinematic_start)
 	(object_destroy cc1)
@@ -76,11 +83,4 @@
 	(vehicle_load_magic cc3 "" (ai_actors poli/poli3))
 	(sleep 400)
 	(fade_out 0.00 0.00 0.00 100)
-)
-
-(script startup end
-	(sleep_until (= (game_time) 2523) 1)
-	(sound_looping_stop "sound\music\brothers_in_arms\brothers in arms")
-	(cinematic_stop)
-	(game_save_totally_unsafe)
 )

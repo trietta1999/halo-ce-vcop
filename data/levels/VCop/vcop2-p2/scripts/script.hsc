@@ -1,90 +1,90 @@
-(global boolean tt_seat false)
-(global boolean tt_fal_driver false)
-(global boolean tri_ch false)
-(global effect eff "scenery\emitters\burning_flame\effects\burning")
-(global boolean sh_boss_cnt false)
-(global real cnt 0)
-(global real cnt1 0)
+(global boolean is_on_seat false)
+(global boolean is_falcon_driver false)
+(global boolean is_in_trigger false)
+(global effect effect_v "scenery\emitters\burning_flame\effects\burning")
+(global boolean is_boss false)
+(global real get_shield 0)
+(global real get_shield1 0)
 
-(script continuous sh_boss_cnt0
-	(if (= sh_boss_cnt true)
+(script continuous run_boss
+	(if (= is_boss true)
 	(begin
-		(set cnt (unit_get_shield (unit (list_get (ai_actors enemy) 0))))
-		(set cnt1 (* cnt 1000))
+		(set get_shield (unit_get_shield (unit (list_get (ai_actors enemy) 0))))
+		(set get_shield1 (* get_shield 1000))
 		(cond
-			((<= cnt1 0) (hud_set_timer_time 0 0))
-			((and (> cnt1 0) (<= cnt1 50)) (hud_set_timer_time 0 31))
-			((and (> cnt1 50) (<= cnt1 100)) (hud_set_timer_time 0 61))
-			((and (> cnt1 100) (<= cnt1 150)) (hud_set_timer_time 0 91))
-			((and (> cnt1 150) (<= cnt1 200)) (hud_set_timer_time 0 121))
-			((and (> cnt1 200) (<= cnt1 250)) (hud_set_timer_time 0 151))
-			((and (> cnt1 250) (<= cnt1 300)) (hud_set_timer_time 0 181))
-			((and (> cnt1 300) (<= cnt1 350)) (hud_set_timer_time 0 211))
-			((and (> cnt1 350) (<= cnt1 400)) (hud_set_timer_time 0 241))
-			((and (> cnt1 400) (<= cnt1 450)) (hud_set_timer_time 0 271))
-			((and (> cnt1 450) (<= cnt1 500)) (hud_set_timer_time 0 301))
-			((and (> cnt1 500) (<= cnt1 550)) (hud_set_timer_time 0 331))
-			((and (> cnt1 550) (<= cnt1 600)) (hud_set_timer_time 0 361))
-			((and (> cnt1 600) (<= cnt1 650)) (hud_set_timer_time 0 391))
-			((and (> cnt1 650) (<= cnt1 700)) (hud_set_timer_time 0 421))
-			((and (> cnt1 700) (<= cnt1 750)) (hud_set_timer_time 0 451))
-			((and (> cnt1 750) (<= cnt1 800)) (hud_set_timer_time 0 481))
-			((and (> cnt1 800) (<= cnt1 850)) (hud_set_timer_time 0 511))
-			((and (> cnt1 850) (<= cnt1 900)) (hud_set_timer_time 0 541))
-			((and (> cnt1 900) (<= cnt1 950)) (hud_set_timer_time 0 571))
-			((and (> cnt1 950) (<= cnt1 1000)) (hud_set_timer_time 0 601))
+			((<= get_shield1 0) (hud_set_timer_time 0 0))
+			((and (> get_shield1 0) (<= get_shield1 50)) (hud_set_timer_time 0 31))
+			((and (> get_shield1 50) (<= get_shield1 100)) (hud_set_timer_time 0 61))
+			((and (> get_shield1 100) (<= get_shield1 150)) (hud_set_timer_time 0 91))
+			((and (> get_shield1 150) (<= get_shield1 200)) (hud_set_timer_time 0 121))
+			((and (> get_shield1 200) (<= get_shield1 250)) (hud_set_timer_time 0 151))
+			((and (> get_shield1 250) (<= get_shield1 300)) (hud_set_timer_time 0 181))
+			((and (> get_shield1 300) (<= get_shield1 350)) (hud_set_timer_time 0 211))
+			((and (> get_shield1 350) (<= get_shield1 400)) (hud_set_timer_time 0 241))
+			((and (> get_shield1 400) (<= get_shield1 450)) (hud_set_timer_time 0 271))
+			((and (> get_shield1 450) (<= get_shield1 500)) (hud_set_timer_time 0 301))
+			((and (> get_shield1 500) (<= get_shield1 550)) (hud_set_timer_time 0 331))
+			((and (> get_shield1 550) (<= get_shield1 600)) (hud_set_timer_time 0 361))
+			((and (> get_shield1 600) (<= get_shield1 650)) (hud_set_timer_time 0 391))
+			((and (> get_shield1 650) (<= get_shield1 700)) (hud_set_timer_time 0 421))
+			((and (> get_shield1 700) (<= get_shield1 750)) (hud_set_timer_time 0 451))
+			((and (> get_shield1 750) (<= get_shield1 800)) (hud_set_timer_time 0 481))
+			((and (> get_shield1 800) (<= get_shield1 850)) (hud_set_timer_time 0 511))
+			((and (> get_shield1 850) (<= get_shield1 900)) (hud_set_timer_time 0 541))
+			((and (> get_shield1 900) (<= get_shield1 950)) (hud_set_timer_time 0 571))
+			((and (> get_shield1 950) (<= get_shield1 1000)) (hud_set_timer_time 0 601))
 		)
 	))
 )
 
-(script continuous test_seat
+(script continuous run_test_seat
 	(sleep_until (or (vehicle_test_seat_list gwar "W-driver" (players)) (vehicle_test_seat_list mwar "W-driver" (players)) (vehicle_test_seat_list sco "W-driver" (players))) 1)
-	(set tt_seat true)
+	(set is_on_seat true)
 )
 
-(script continuous tri1
+(script continuous run_trigger_1
 	(sleep_until (volume_test_objects tri1 (players)) 1)
-	(if (= tt_seat false) (game_revert))
+	(if (= is_on_seat false) (game_revert))
 	
 )
 
-(script startup ch_fal_ff1
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff1
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr1) 0))
 	(vehicle_hover ff1 0)
 )
 
-(script startup ch_fal_ff2
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff2
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr2) 0))
 	(vehicle_hover ff2 0)
 )
 
-(script startup ch_fal_ff3
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff3
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr3) 0))
 	(vehicle_hover ff3 0)
 )
 
-(script startup ch_fal_ff4
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff4
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr4) 0))
 	(vehicle_hover ff4 0)
 )
 
-(script startup ch_fal_ff5
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff5
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr5) 0))
 	(vehicle_hover ff5 0)
 )
 
-(script startup ch_fal_ff6
-	(sleep_until (= tt_fal_driver true))
+(script startup start_check_falcon_ff5
+	(sleep_until (= is_falcon_driver true))
 	(sleep_until (= (ai_living_count enemy/fdr6) 0))
 	(vehicle_hover ff6 0)
 )
 
-(script dormant load_fal
+(script dormant call_falcon_load
 	(ai_place enemy/fdr4)
 	(ai_place enemy/fdr5)
 	(ai_place enemy/fdr6)
@@ -94,8 +94,8 @@
 	(vehicle_load_magic ff6 "" (ai_actors enemy/fdr6))
 )
 
-(script continuous tri_1_2_ch_scr
-	(if (= tri_ch true)
+(script continuous run_check_trigger_1_2
+	(if (= is_in_trigger true)
 		(if (and (= (volume_test_objects tri1 (players)) 0) (= (volume_test_objects tri2 (players)) 0))
 		(begin
 			(fade_out 255 0 0 50)
@@ -105,7 +105,7 @@
 	)
 )
 
-(script dormant load_tur1
+(script dormant call_turret_1_load
 	(ai_place enemy/tur1)
 	(ai_place enemy/tur2)
 	(ai_place enemy/tur3)
@@ -125,7 +125,7 @@
 	(ai_command_list enemy/tur5 tur45)
 )
 
-(script dormant load_tur2
+(script dormant call_turret_2_load
 	(ai_place enemy/tur6)
 	(ai_place enemy/tur7)
 	(ai_place enemy/tur8)
@@ -144,7 +144,7 @@
 	(ai_command_list enemy/tur10 tur10_11_12)
 )
 
-(script dormant load_tur3
+(script dormant call_turret_3_load
 	(ai_place enemy/tur11)
 	(ai_place enemy/tur12)
 	(ai_place enemy/tur13)
@@ -166,7 +166,7 @@
 	(ai_command_list enemy/tur12 tur10_11_12)
 )
 
-(script dormant to_boss
+(script dormant call_to_boss
 	(ai_kill enemy)
 	(ai_erase friends/sq3)
 	(object_destroy obj_boss)
@@ -212,11 +212,11 @@
 	
 	(show_hud_timer 1)
 	(hud_set_timer_position 370 0 top_right)
-	(set sh_boss_cnt true)
+	(set is_boss true)
 	
 	(sleep_until (= (ai_living_count enemy)0))
 	(show_hud_help_text false)
-	(set sh_boss_cnt false)
+	(set is_boss false)
 	(show_hud_timer 0)
 	(sleep 100)
 	(fade_out 0 0 0 100)
@@ -225,8 +225,23 @@
 	(map_name b40)
 )
 
+(script continuous run_trigger_8_9
+	(sleep_until (or (volume_test_objects tri8 (players)) (volume_test_objects tri9 (players)) (volume_test_objects tri10 (players))) 1)
+	(game_revert)
+)
+
+(script startup run_trigger_11
+	(sleep_until (volume_test_objects tri8 (players)) 1)
+	(game_save_totally_unsafe)
+)
+
+(script continuous run_weapon
+	(object_create pis)
+	(object_create shot)
+)
+
 (script startup action
-	(effect_new_on_object_marker eff fal "driver")
+	(effect_new_on_object_marker effect_v fal "driver")
 	(unit_set_enterable_by_player fal 0)
 	(ai_place friends/sq1)
 	(ai_place enemy/sq2)
@@ -240,7 +255,7 @@
 	(device_operates_automatically_set door5 0)
 	
 	(sleep_until (volume_test_objects tri1 (players)) 1)
-	(set tri_ch true)
+	(set is_in_trigger true)
 	(sound_looping_start sound\halo2\music\unyielding\unyielding none 1)
 	(game_save_totally_unsafe)
 		
@@ -285,9 +300,9 @@
 	(vehicle_load_magic ff2 "" (ai_actors enemy/fdr2))
 	(vehicle_load_magic ff3 "" (ai_actors enemy/fdr3))
 	
-	(wake load_fal)
+	(wake call_falcon_load)
 	
-	(set tt_fal_driver true)
+	(set is_falcon_driver true)
 	
 	(show_hud_help_text true)
 	(hud_set_help_text obj3)
@@ -300,7 +315,7 @@
 	(game_save_totally_unsafe)
 	
 	(sleep_until (volume_test_objects tri3 (players)) 1)
-	(set tri_ch false)
+	(set is_in_trigger false)
 	(game_save_totally_unsafe)
 	
 	(sleep_until (volume_test_objects tri4 (players)) 1)
@@ -314,9 +329,9 @@
 	(device_operates_automatically_set door2 1)
 	(game_save_totally_unsafe)
 	
-	(wake load_tur1)
-	(wake load_tur2)
-	(wake load_tur3)
+	(wake call_turret_1_load)
+	(wake call_turret_2_load)
+	(wake call_turret_3_load)
 	
 	(sleep_until (= (device_get_position control2) 1) 1)
 	(sound_impulse_start sound\sfx\impulse\panel\activate_panel none 1.00)
@@ -359,20 +374,5 @@
 	
 	(sleep_until (= (ai_living_count enemy)0))
 	(sleep 100)
-	(wake to_boss)
-)
-
-(script continuous tri89
-	(sleep_until (or (volume_test_objects tri8 (players)) (volume_test_objects tri9 (players)) (volume_test_objects tri10 (players))) 1)
-	(game_revert)
-)
-
-(script startup tri11
-	(sleep_until (volume_test_objects tri8 (players)) 1)
-	(game_save_totally_unsafe)
-)
-
-(script continuous weapon
-	(object_create pis)
-	(object_create shot)
+	(wake call_to_boss)
 )

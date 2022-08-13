@@ -1,3 +1,11 @@
+(script startup start_hud
+	(show_hud_help_text true)
+	(hud_set_help_text obj3)
+	(hud_set_objective_text obj3)
+	(sleep 250)
+	(show_hud_help_text false)
+)
+
 (script startup action
 	(device_operates_automatically_set door 0)
 	(unit_set_enterable_by_player falcon 0)
@@ -17,12 +25,4 @@
 	(game_save_totally_unsafe)
 	(sleep_until (volume_test_objects tri2 (players)) 1)
 	(map_name vcop1-p2)
-)
-
-(script startup hud
-	(show_hud_help_text true)
-	(hud_set_help_text obj3)
-	(hud_set_objective_text obj3)
-	(sleep 250)
-	(show_hud_help_text false)
 )
